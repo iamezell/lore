@@ -1,13 +1,14 @@
 /* globals __DEV__ */
 import Phaser from 'phaser'
 import Mushroom from '../sprites/Mushroom'
-
+import Actor from '../actors/Actor'
 export default class extends Phaser.State {
   init () {}
   preload () {}
 
   create () {
     const bannerText = 'Phaser + ES6 + Webpack'
+    let Hero = new Actor(this.game, 0, 0, 'mushroom');
     let banner = this.add.text(this.world.centerX, this.game.height - 80, bannerText)
     banner.font = 'Bangers'
     banner.padding.set(10, 16)
@@ -23,7 +24,8 @@ export default class extends Phaser.State {
       asset: 'mushroom'
     })
 
-    this.game.add.existing(this.mushroom)
+    //this.game.add.existing(this.mushroom)
+    this.game.add.existing(Hero)
   }
 
   render () {
