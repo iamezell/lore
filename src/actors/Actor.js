@@ -11,6 +11,7 @@ class Actor extends Phaser.Sprite {
     this.intelligence = 10;
     this.inititive = 0;
     this.armor = 0;
+    this.hitpoints = 10;
     this.level = level || 0;
     this.skillBonus = 0;
     console.log('lets roll some init')
