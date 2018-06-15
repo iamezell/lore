@@ -15,7 +15,7 @@ export default class extends Phaser.State {
     myHero.equip({strengthBonus: 10})
     let theKobold = new Kobold(this.game, 100, 0, 'mushroom', 'kobold', 1);
     let banner = this.add.text(this.world.centerX, this.game.height - 80, bannerText)
-    let AttackBtn = this.add.text(game.world.centerX, game.world.centerY, "click and drag me", { font: "65px Arial", fill: "#ff0044", align: "center" });
+    let AttackBtn = this.add.text(50, 50, "attack", { font: "16px Arial", fill: "#ff0044", align: "center" });
     AttackBtn.anchor.set(0.5)
     AttackBtn.inputEnabled = true;
     AttackBtn.events.onInputDown.add
