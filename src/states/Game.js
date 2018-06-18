@@ -11,14 +11,14 @@ export default class extends Phaser.State {
 
   create () {
     const bannerText = 'Phaser + ES6 + Webpack'
-    let myHero = new Hero(this.game, 0, 0, 'mushroom', 'me', 1);
+    let myHero = new Hero(this.game, 100, 150, 'mushroom', 'me', 1);
     myHero.equip({strengthBonus: 10})
-    let theKobold = new Kobold(this.game, 100, 0, 'mushroom', 'kobold', 1);
+    let theKobold = new Kobold(this.game, 300, 150, 'mushroom', 'kobold', 1);
     let banner = this.add.text(this.world.centerX, this.game.height - 80, bannerText)
     let AttackBtn = this.add.text(50, 50, "attack", { font: "16px Arial", fill: "#ff0044", align: "center" });
     AttackBtn.anchor.set(0.5)
     AttackBtn.inputEnabled = true;
-    AttackBtn.events.onInputDown.add
+    AttackBtn.events.onInputDown.add(this.onAttack, this);
     banner.font = 'Bangers'
     banner.padding.set(10, 16)
     banner.fontSize = 40
@@ -54,9 +54,17 @@ export default class extends Phaser.State {
    let attack = matchArray[0].attack(matchArray[1])
   }
 
+  onAttack () {
+    console.log('Attack this again')
+  }
+
+  update = (gameState) => {
+   // console.log('updating!!')
+  }
+
   render () {
     if (__DEV__) {
-      this.game.debug.spriteInfo(this.mushroom, 32, 32)
+    //  this.game.debug.spriteInfo(this.mushroom, 32, 32)
     }
   }
 }
