@@ -9,6 +9,9 @@ export default class extends Phaser.State {
   }
 
   preload () {
+    this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+    this.scale.pageAlignHorizontally = true;
+    this.scale.pageAlignVertically = true;
     WebFont.load({
       google: {
         families: ['Bangers']
