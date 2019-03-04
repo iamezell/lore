@@ -1,7 +1,10 @@
-import 'phaser';
 import TitleScene from './scenes/TitleScene'
+import BootScene from './scenes/BootScene'
+import LoadingScene from './scenes/LoadingScene'
 
 let titleScene = new TitleScene()
+let bootScene = new BootScene()
+let loadingScene = new LoadingScene()
 
 let gameScene = new Phaser.Scene('Title')
 
@@ -15,4 +18,6 @@ const config = {
 
 const game = new Phaser.Game(config); // eslint-disable-line no-unused-vars
 game.scene.add('TitleScene', titleScene);
-game.scene.start('TitleScene');
+game.scene.add('BootScene', bootScene);
+game.scene.add('LoadingScene', loadingScene);
+game.scene.start('BootScene',{scene: "title"});

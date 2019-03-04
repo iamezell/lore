@@ -1,0 +1,35 @@
+{
+    "assets": {
+        "background_image": {"type":"image", "source":"assets/images/battle/background.png"}
+    },
+    "groups": [
+        "background",
+        "texts"
+    ],
+    "sprites" : {
+        "background" : {
+            "type": "sprite",
+            "position": {"x": 320, "y": 240},
+            "style":"background_image",
+            "group": "backgrounds"
+        },
+        "title_message" : {
+            "type": "text",
+            "position": {"x": 20, "y": 180},
+            "style":{
+                "font": "20px Kells", "fill": "#000000"
+            },
+            "text":"Lore",
+            "group": "texts"
+        },
+        "start_message" : {
+            "type": "text",
+            "position": {"x": 150, "y": 2000},
+            "style":{
+                "font": "20px Kells", "fill": "#000000"
+            },
+            "text":"click to start playing",
+            "group": "texts"
+        }
+    }
+}
